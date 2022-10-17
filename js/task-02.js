@@ -19,4 +19,4 @@ const addListIngredients = ingredients.map(element => {
   
 listIngredients.append(...addListIngredients);
 
-console.log(listIngredients);
+console.log(addListIngredients);
