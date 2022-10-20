@@ -1,11 +1,12 @@
 const inputValue = document.querySelector('#validation-input');
+const style = document.querySelector('style')
 // const dataValue = document.querySelector('[data-length="6"]')
-console.log(inputValue);
+console.log(style);
 
 const sssss = inputValue.addEventListener('blur', event => {
     if (event.currentTarget.value.length === inputValue.dataset.length) {
-    event.classList.replace('#validation-input', '#validation-input.valid');
-  } event.classList.replace('#validation-input', '#validation-input.invalid');
+    style.classList.replace('#validation-input', '#validation-input.valid');
+  } style.classList.replace('#validation-input', '#validation-input.invalid');
     
 })
 
