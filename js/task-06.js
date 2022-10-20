@@ -1,20 +1,17 @@
 const inputValue = document.querySelector('#validation-input');
-const style = document.querySelector('style')
-// const dataValue = document.querySelector('[data-length="6"]')
-console.log(style);
+const styleInput = document.querySelector('style')
+styleInput.remove();
 
-const sssss = inputValue.addEventListener('blur', event => {
-    if (event.currentTarget.value.length === inputValue.dataset.length) {
-    style.classList.replace('#validation-input', '#validation-input.valid');
-  } style.classList.replace('#validation-input', '#validation-input.invalid');
-    
-})
+const checkValueLength = inputValue.addEventListener('blur', event => {
+  inputValue.classList.add(`#validation-input`);
+  
+  if (event.currentTarget.value.length === Number(inputValue.dataset.length)) {
+    inputValue.classList.add(`valid`);
+    inputValue.classList.remove(`invalid`);
+  } else {
+    inputValue.classList.add(`invalid`);
+      }
+    console.log(event.currentTarget.value.length === Number(inputValue.dataset.length))
 
-
-
-
-    // if (inputValue.currentTarget.value.length === inputValue.data - length.valueOf) {
-    //     input.classList.add('validation-input.valid');
-    // }input.classList.add('validation-input.invalid');
-
-// if(inputValue.currentTarget.value.length = inputValue[data-length])
+  })
+  

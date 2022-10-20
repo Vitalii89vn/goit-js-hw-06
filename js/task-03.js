@@ -13,11 +13,11 @@ const images = [
   },
 ];
 const makeImagesEl = images.map(({ url, alt }) => {
- return `<li class="list"><img src="${url}" alt="${alt}" width="1200" class="img-list"></li>`;
-}).join('')
+  return `<li class="list"><img src="${url}" alt="${alt}" width="1200" class="img-list"></li>`;
+}).join('');
 
 const listImages = document.querySelector('ul');
-listImages.insertAdjacentHTML('afterbegin', makeImagesEl)
+listImages.insertAdjacentHTML('afterbegin', makeImagesEl);
 
 
 
@@ -35,7 +35,7 @@ console.log(makeImagesEl)
 //   imageList.appendChild(imageItem);
 //   return imageList;
 // })
-// listImages.append(addImages);
+// listImages.append(...addImages);
 
 // console.log(addImages);
 

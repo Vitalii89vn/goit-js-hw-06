@@ -1,12 +1,14 @@
 const inputField = document.querySelector('#name-input');
 const outputField = document.querySelector('#name-output');
+const textContent = outputField.textContent;
 
-console.log(inputField.textContent)
 inputField.addEventListener('input', event => {
-  if (event.currentTarget.value === ``) {
-         outputField.textContent;
-      }   outputField.textContent = event.currentTarget.value;
- 
-})
+ event.currentTarget.value === `` ?
+    outputField.textContent = textContent :
+    outputField.textContent = event.currentTarget.value;
+  
+
+ })
 
 
+  
