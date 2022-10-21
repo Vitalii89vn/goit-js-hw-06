@@ -8,7 +8,16 @@ const boxesField = document.querySelector('#boxes');
 
 
 
-console.log(Number(inputNumber.currentTarget.value));
+// console.log(Number(inputNumber.currentTarget.textContent));
+
+createBtn.addEventListener('submit', event => {
+  event.preventDefault();
+  inputNumber.addEventListener('input', event => {
+let currentRange = Number(event.currentTarget.value);
+  console.log(currentRange);
+  })
+ 
+})
 
 // createBtn.addEventListener('submit', event => {
 //   event.preventDefault();
@@ -22,7 +31,7 @@ console.log(Number(inputNumber.currentTarget.value));
   
 //   console.log(amount);
 //   const boxes = 
-//   boxesField.insertAdjacentElement('afterbegin', boxes)
+//   boxesField.insertAdjacentElement('afterend', boxes)
 //   let count = 30;
 //   boxesField.style.backgroundColor = `${getRandomHexColor}`;
 //   boxesField.style.border = "2px solid #000000";

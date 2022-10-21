@@ -5,6 +5,6 @@ inputRange.addEventListener('input', event => {
     let currentRange = Number(event.currentTarget.value);
     text.style.fontSize = `${ currentRange }px`;
 
-    console.log(event.currentTarget.value)
+    console.log(currentRange)
 
 })
