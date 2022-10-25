@@ -15,33 +15,25 @@ const boxesField = document.querySelector('#boxes');
 // console.log(currentValue)
 createBtn.addEventListener('submit', createBoxes())
 
-// let count = 30;
-// let currentSize =  count += 10;
-// boxesField.style.backgroundColor = `${getRandomHexColor()}`;
-// boxesField.style.border = "2px solid #000000";
-// boxesField.style.width = currentSize + `px`;
-// boxesField.style.heigth = currentSize + `px`;
-
 
 function createBoxes(amount) {
-
-  inputNumber.addEventListener('input', event => {
-   Number(event.currentTarget.value);
-    // console.log(Number(event.currentTarget.value));
-  });
-  console.log(amount);
+  amount = inputNumber.addEventListener('input', event => {
+    Number(event.currentTarget.value);
+    console.log(Number(event.currentTarget.value));
   
-  let count = 30;
-  let currentSize =  count += 10;
+      let count = 20;
+      let currentSize =  count += 10;
   
-
-  const boxes = '<div id="boxes"></div>';
-  boxesField.insertAdjacentHTML('beforeend', boxes)
+    boxesField.style.backgroundColor = `${getRandomHexColor()}`;
+    boxesField.style.border = "2px solid #000000";
+    boxesField.style.width = currentSize + `px`;
+    boxesField.style.minHeigth = currentSize + `px`;
+    
+      const boxes = '<div id="boxes" style="background-color: `${getRandomHexColor()}`;border: 2px solid rgb(0, 0, 0);width: currentSize + `px`;height: currentSize + `px`;"></div>';
+      boxesField.insertAdjacentHTML('afterend', boxes)
  
-boxesField.style.backgroundColor = `${getRandomHexColor()}`;
-boxesField.style.border = "2px solid #000000";
-boxesField.style.width = currentSize + `px`;
-boxesField.style.heigth = currentSize + `px`;
+    
 
+  })
 }
 // console.log(createBoxes())
