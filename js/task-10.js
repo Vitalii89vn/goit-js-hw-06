@@ -5,35 +5,42 @@ const inputNumber = document.querySelector('[type="number"]');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 const boxesField = document.querySelector('#boxes');
+const createdBoxes = boxesField.children;
 
-// const currentValue = inputNumber.addEventListener('input', event => {
-//    Number(event.currentTarget.value);
-//     console.log(Number(event.currentTarget.value));
-//   })
-
-
-// console.log(currentValue)
-createBtn.addEventListener('submit', createBoxes())
-
+createBtn.addEventListener('click', createBoxes());
+destroyBtn.addEventListener('click', destroyBoxes());
 
 function createBoxes(amount) {
-  amount = inputNumber.addEventListener('input', event => {
-    Number(event.currentTarget.value);
-    console.log(Number(event.currentTarget.value));
-  
-      let count = 20;
-      let currentSize =  count += 10;
-  
-    boxesField.style.backgroundColor = `${getRandomHexColor()}`;
-    boxesField.style.border = "2px solid #000000";
-    boxesField.style.width = currentSize + `px`;
-    boxesField.style.minHeigth = currentSize + `px`;
-    
-      const boxes = '<div id="boxes" style="background-color: `${getRandomHexColor()}`;border: 2px solid rgb(0, 0, 0);width: currentSize + `px`;height: currentSize + `px`;"></div>';
-      boxesField.insertAdjacentHTML('afterend', boxes)
- 
-    
-
+   inputNumber.addEventListener('input', event => {
+     amount = Number(event.currentTarget.value);
+   
+     let counter = [];
+     for (let i = 1; i <= amount; i += 1) {
+       counter.push(i);
+     }
+       const code = counter.map(element => {
+        let startCount = 20;
+        let currentSize = startCount += 10*element;
+        return `<div class="box" style = " background-color: ${getRandomHexColor()} ; border: 2px solid rgb(0, 0, 0); width: ${currentSize}px; height: ${currentSize}px; " ></div >`
+     }).join('');
+      
+       boxesField.insertAdjacentHTML('beforeend', code) 
   })
 }
+
+function destroyBoxes() {
+ createdBoxes.innerHTML= '';
+  }
+  
+    // boxesField.style.backgroundColor = `${getRandomHexColor()}`;
+    // boxesField.style.border = "2px solid #000000";
+    // boxesField.style.width = currentSize + `px`;
+    // boxesField.style.heigth = currentSize + `px`;
+    
+    //  const box = `<div class="box" style = " background-color: ${getRandomHexColor()} ; border: 2px solid rgb(0, 0, 0); width: ${currentSize}px; height: ${currentSize}px; " ></div >`;
+    //  const boxes = box.repeat(amount);
+    //  boxesField.innerHTML('beforeend', box)
+
+    
+
 // console.log(createBoxes())
