@@ -10,37 +10,26 @@ const createdBoxes = boxesField.children;
 createBtn.addEventListener('click', createBoxes());
 destroyBtn.addEventListener('click', destroyBoxes());
 
+
 function createBoxes(amount) {
-   inputNumber.addEventListener('input', event => {
+     inputNumber.addEventListener('change', event => {
      amount = Number(event.currentTarget.value);
-   
+ 
      let counter = [];
      for (let i = 1; i <= amount; i += 1) {
        counter.push(i);
      }
-       const code = counter.map(element => {
+       const markup = counter.map(element => {
         let startCount = 20;
-        let currentSize = startCount += 10*element;
+        let currentSize = startCount += 10 * element;
         return `<div class="box" style = " background-color: ${getRandomHexColor()} ; border: 2px solid rgb(0, 0, 0); width: ${currentSize}px; height: ${currentSize}px; " ></div >`
      }).join('');
       
-       boxesField.insertAdjacentHTML('beforeend', code) 
+       boxesField.insertAdjacentHTML('beforeend', markup)
   })
 }
 
 function destroyBoxes() {
- createdBoxes.innerHTML= '';
-  }
-  
-    // boxesField.style.backgroundColor = `${getRandomHexColor()}`;
-    // boxesField.style.border = "2px solid #000000";
-    // boxesField.style.width = currentSize + `px`;
-    // boxesField.style.heigth = currentSize + `px`;
-    
-    //  const box = `<div class="box" style = " background-color: ${getRandomHexColor()} ; border: 2px solid rgb(0, 0, 0); width: ${currentSize}px; height: ${currentSize}px; " ></div >`;
-    //  const boxes = box.repeat(amount);
-    //  boxesField.innerHTML('beforeend', box)
-
-    
-
-// console.log(createBoxes())
+   createdBoxes.innerHTML = ``;
+}
+  console.log(destroyBoxes())
