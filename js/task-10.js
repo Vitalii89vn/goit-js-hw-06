@@ -5,7 +5,7 @@ const inputNumber = document.querySelector('[type="number"]');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 const boxesField = document.querySelector('#boxes');
-const createdBoxes = boxesField.children;
+const createdBoxes = document.querySelectorAll('.box');
 
 createBtn.addEventListener('click', createBoxes());
 destroyBtn.addEventListener('click', destroyBoxes());
@@ -28,7 +28,7 @@ function createBoxes(amount) {
        boxesField.insertAdjacentHTML('beforeend', markup)
   })
 }
-
+  
 function destroyBoxes() {
    createdBoxes.innerHTML = ``;
 }
